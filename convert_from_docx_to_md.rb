@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-# Don't forget to `chmod +x <this_file>`
 input_docx_filename = ARGV[0] || ''
 puts "I: #{input_docx_filename}"
 output_md_file = ARGV[1] || ''
