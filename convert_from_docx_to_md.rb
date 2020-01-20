@@ -45,6 +45,7 @@ end
 # SED_ADD_AN_ENDING_NEWLINE_IF_NEEDED = <<SED.chomp
 # '$a\'
 # SED
+# Note: These sed regexes are ugly because we have to escape special characters.
 SED_USE_UNDERSCORE_FOR_ITALICS = %Q('s/ToUnDeRsCoRe/_/g')
 SED_REPLACE_CURLY_SINGLE_OPEN_QUOTE_WITH_STRAIGHT_SINGLE_QUOTE = %Q(s/\\‘/\\'/g)
 SED_REPLACE_CURLY_SINGLE_END_QUOTE_WITH_STRAIGHT_SINGLE_QUOTE = %Q(s/\\’/\\'/g)
