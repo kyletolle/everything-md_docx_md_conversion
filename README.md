@@ -43,6 +43,12 @@ chmod +x convert_from_docx_to_md.rb
 ./convert_from_docx_to_md.rb "ch2/ch2.with-pandoc.docx" "ch2/index.with-pandoc.md"
 ```
 
+Or with files in other directories:
+```
+./convert_from_docx_to_md.rb ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/ch2.with-pandoc.docx ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/index.with-pandoc.md
+```
+
+
 ## Original Commands
 
 Originally, I played around on the command line until I got these commands, which do most of what I wanted. It's quite cryptic to understand what's going on, so I created this project in order to create a Ruby script to do what I wanted and break it out so that the code is more understandable.
