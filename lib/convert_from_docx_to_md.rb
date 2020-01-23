@@ -1,4 +1,5 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
+# Got the shebang line from https://stackoverflow.com/q/20204016/249218
 
 require_relative 'first_way_of_doing_things'
 require_relative 'second_way_of_doing_things'
