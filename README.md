@@ -48,6 +48,11 @@ Or with files in other directories:
 ./lib/convert_from_docx_to_md.rb ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/ch2.with-pandoc.docx ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/index.with-pandoc.md
 ```
 
+Or within a `toaes_pandoc_conversion_playground` folder that's a sibling to `lib`.
+```
+../lib/convert_from_docx_to_md.rb ./ToaES-PR1.1_KT.docx ./ToaES-PR1.1_KT.md
+```
+
 
 ## Original Commands
 
