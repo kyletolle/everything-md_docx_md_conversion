@@ -16,8 +16,18 @@ private
 
   def command_text
     @command_text ||= <<CMD
-pandoc --filter #{underscore_filter_path} -s --wrap=none -t gfm -o "#{output_md_file}" "#{input_docx_filename}"
+pandoc #{filter_text} -s --wrap=none -t gfm -o "#{output_md_file}" "#{input_docx_filename}"
 CMD
+  end
+
+  def filter_text
+    return unless include_filter?
+
+    "--filter #{underscore_filter_path}"
+  end
+
+  def include_filter?
+    false
   end
 
   def underscore_filter_path
