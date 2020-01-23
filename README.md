@@ -34,18 +34,18 @@ gem install paru
 - Make sure that `convert_from_docx_to_md.rb` is executable
 
 ```
-chmod +x convert_from_docx_to_md.rb
+chmod +x lib/convert_from_docx_to_md.rb
 ```
 
 ## Usage
 
 ```
-./convert_from_docx_to_md.rb "ch2/ch2.with-pandoc.docx" "ch2/index.with-pandoc.md"
+./lib/convert_from_docx_to_md.rb "ch2/ch2.with-pandoc.docx" "ch2/index.with-pandoc.md"
 ```
 
 Or with files in other directories:
 ```
-./convert_from_docx_to_md.rb ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/ch2.with-pandoc.docx ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/index.with-pandoc.md
+./lib/convert_from_docx_to_md.rb ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/ch2.with-pandoc.docx ~/Dropbox/everything/novels/bones-of-a-broken-world/draft-1/ch2/index.with-pandoc.md
 ```
 
 
@@ -86,3 +86,4 @@ pandoc --filter ./markdown_underscore_italics.rb  -s --wrap=none -t gfm -o $MD_O
 ## License
 
 MIT
+
