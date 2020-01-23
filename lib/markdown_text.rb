@@ -44,6 +44,7 @@ class MarkdownText
       replace_em_dash_with_dashdashdash
       replace_en_dash_with_dashdash
       replace_esacped_pound_sign_with_hr
+      replace_expanded_dotdotdot_with_condensed
       add_ending_newline_if_needed
     ]
   end
@@ -88,6 +89,12 @@ class MarkdownText
     # In the ToaES doc for copyediting, I used # for section break. I want to
     # convert those back to --- for markdown section breaks.
     text.gsub(/\\#/, '---')
+  end
+
+  def replace_expanded_dotdotdot_with_condensed(text)
+    # In ToaES doc for copyediting, three dots separeted by spaces were used
+    # instead of ellipsis. I want to convert those back to regular dotdotdots.
+    text.gsub(/ \. \. \./, '...')
   end
 
   def add_ending_newline_if_needed(text)
