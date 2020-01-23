@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
-require_relative 'lib/first_way_of_doing_things'
-require_relative 'lib/second_way_of_doing_things'
+require_relative 'first_way_of_doing_things'
+require_relative 'second_way_of_doing_things'
 
 input_docx_filename = ARGV[0] || ''
 puts "I: #{input_docx_filename}"
