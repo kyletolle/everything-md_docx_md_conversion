@@ -16,8 +16,14 @@ private
 
   def command_text
     @command_text ||= <<CMD
-pandoc --filter ./markdown_underscore_italics.rb -s --wrap=none -t gfm -o #{output_md_file} #{input_docx_filename}
+pandoc --filter #{underscore_filter_path} -s --wrap=none -t gfm -o "#{output_md_file}" "#{input_docx_filename}"
 CMD
+  end
+
+  def underscore_filter_path
+    dir = File.dirname(__FILE__)
+    path = File.join(dir, 'markdown_underscore_italics.rb')
+    "\"#{path}\""
   end
 end
 
