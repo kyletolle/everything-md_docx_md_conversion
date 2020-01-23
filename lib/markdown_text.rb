@@ -31,8 +31,8 @@ class MarkdownText
     #   - Replace escaped close square bracket with unescaaped close square
     #   bracket
     #   - Replace em-dash with ---
+    #   - Replace en-dash with --
     #   - Add ending newline if needed
-    #   - Maybe: Convert en-dash to --
     %i[
       replace_underscore_text_with_underscore_character_for_italics
       replace_curly_single_quotes_with_straight
@@ -42,6 +42,7 @@ class MarkdownText
       replace_escaped_open_square_brackets_with_unescaped
       replace_escaped_close_square_brackets_with_unescaped
       replace_em_dash_with_dashdashdash
+      replace_en_dash_with_dashdash
       add_ending_newline_if_needed
     ]
   end
@@ -76,6 +77,10 @@ class MarkdownText
 
   def replace_em_dash_with_dashdashdash(text)
     text.gsub(/—/, '---')
+  end
+
+  def replace_en_dash_with_dashdash(text)
+    text.gsub(/–/, '---')
   end
 
   def add_ending_newline_if_needed(text)
