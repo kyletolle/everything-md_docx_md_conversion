@@ -43,6 +43,7 @@ class MarkdownText
       replace_escaped_close_square_brackets_with_unescaped
       replace_em_dash_with_dashdashdash
       replace_en_dash_with_dashdash
+      replace_esacped_pound_sign_with_hr
       add_ending_newline_if_needed
     ]
   end
@@ -81,6 +82,12 @@ class MarkdownText
 
   def replace_en_dash_with_dashdash(text)
     text.gsub(/–/, '---')
+  end
+
+  def replace_esacped_pound_sign_with_hr(text)
+    # In the ToaES doc for copyediting, I used # for section break. I want to
+    # convert those back to --- for markdown section breaks.
+    text.gsub(/\\#/, '---')
   end
 
   def add_ending_newline_if_needed(text)
