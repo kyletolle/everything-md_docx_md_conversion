@@ -10,7 +10,6 @@ class SplitMdIntoChapters
     self.all_chapters_text = all_chapters_text
   end
 
-
   def chapters
     # Uses a positive lookahead assertion in regex. Used
     # https://stackoverflow.com/a/18089658/249218 and

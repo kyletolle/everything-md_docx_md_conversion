@@ -45,6 +45,7 @@ class MarkdownText
       replace_en_dash_with_dashdash
       replace_esacped_pound_sign_with_hr
       replace_expanded_dotdotdot_with_condensed
+      replace_nonbreaking_space_with_regular_space
       add_ending_newline_if_needed
     ]
   end
@@ -91,10 +92,21 @@ class MarkdownText
     text.gsub(/\\#/, '---')
   end
 
+  # TODO: Actually, when generating an expanded dotdotdot, we should use
+  # non-breaking spaces between the dots, as mentioned in
+  # https://www.liminalpages.com/ellipsis-spaces-dots.
   def replace_expanded_dotdotdot_with_condensed(text)
     # In ToaES doc for copyediting, three dots separeted by spaces were used
     # instead of ellipsis. I want to convert those back to regular dotdotdots.
     text.gsub(/ \. \. \./, '...')
+  end
+
+  def replace_nonbreaking_space_with_regular_space(text)
+    # TODO: Not sure if I should keep the non-breaking spaces that are currently
+    # used in ToaES.
+    # Note: You can type a non-breaking space in Word with Option+Shift+Space
+    # (Mac) or Ctrl+Shift+Space (Windows).
+    # text.gsub(/ /, ' ')
   end
 
   def add_ending_newline_if_needed(text)
